@@ -71,34 +71,15 @@ function createLyrics(lyricsData) {
   doms.ul.appendChild(fragment);
 }
 
-let userHasScrolled = false;
-doms.container.addEventListener("scroll", () => (userHasScrolled = true));
-
-// window.onscroll = function (e) {
-//   // userHasScrolled = true;
-//   console.log("HELLO");
-// };
-
 /**
  * This function implements the scrolling lyrics effect.
  */
 function setOffset() {
   userHasScrolled = false;
-  //   console.log("setOff");
-
-  if (userHasScrolled) {
-    // user is scrolling
-    console.log("user is scrolling");
-  }
 
   const lyricsData = this.lyricsData;
   const liHeight = this.liHeight;
   const index = findIndex(lyricsData);
-
-  //   doms.container.addEventListener("scroll", function () {
-  //     // user scrolling, override auto scrolling
-  //     console.log("user scrolling");
-  //   });
 
   const heightToTop = index * liHeight + liHeight / 2; // height from top of <ul> to the current lyrics
   let offset = heightToTop;
@@ -122,8 +103,6 @@ function init() {
 
   // Calculate li height outside of createOffset() for efficiency. Doing the dom selection inside the function would cause reflow as they are getting size and position on the webpage
   const liHeight = doms.ul.children[0].clientHeight;
-
-  //   console.log(lyricsData);
 
   const datas = {
     lyricsData: lyricsData,

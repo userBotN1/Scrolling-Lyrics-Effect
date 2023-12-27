@@ -16,13 +16,12 @@ audio {
 
 .container {
   height: 420px;
-  overflow-y: visible;
-  /* scroll-behavior: smooth; */
+  overflow-y: hidden;
   border: 2px solid yellow;
 }
 
 .container ul {
-  /* margin: 210px 0; */
+  margin: 210px 0;
   list-style: none;
   border: 2px solid blue;
 }
